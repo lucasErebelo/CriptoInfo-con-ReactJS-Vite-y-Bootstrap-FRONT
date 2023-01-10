@@ -1,0 +1,17 @@
+@media (min-width: 1200px){
+    .contenedor{
+        display: flex;
+        flex-direction: row;
+        align-items: top;
+        gap: 50px;
+    }
+    .div-tabla{
+        width: 50%;
+        
+    }
+    .div-cotizador{
+        width: 50%;
+        height: 100%;
+    }
+
+}

@@ -1,0 +1,8 @@
+.botonesTop{
+    
+    transition: all .5s ease-in-out;
+}
+
+.botonesTop:hover{
+    font-weight: 600; 
+}
