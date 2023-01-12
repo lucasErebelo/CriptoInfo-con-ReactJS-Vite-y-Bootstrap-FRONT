@@ -12,13 +12,6 @@ function App() {
   const [modoOscuro, setModoOscuro] = useState(BGINITIAL);
   const [busqueda, setBusqueda] = useState('');
 
-  // const eliminarCriptoFav = (id) => {
-  //   // console.log('Eliminando cripto', id);
-  //   const criptosFavsActualizadas = monedasFavoritas.filter(monedaFav => monedaFav.id !== id);
-  //   setMonedasFavoritas(criptosFavsActualizadas);
-  //   // console.log(criptosFavsActualizadas);
-  // }
-
   //CONSUMIR API//
   const consumirAPI = async () => {
 
@@ -41,10 +34,6 @@ function App() {
   useEffect(() => {
     localStorage.setItem('modoOscuro', JSON.stringify(modoOscuro));
   }, [modoOscuro]);
-
-  // useEffect(() => {
-  //   localStorage.setItem('monedasFavoritas', JSON.stringify(monedasFavoritas));
-  // }, [monedasFavoritas]);
 
   return (
     
