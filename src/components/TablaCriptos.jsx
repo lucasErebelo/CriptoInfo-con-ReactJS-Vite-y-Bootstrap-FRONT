@@ -6,9 +6,6 @@ import  '../styles/MediaQueries.css'
 import '../styles/Transitions.css'
 import Button from '@mui/material/Button';
 
-// const titulos = ['#', 'Moneda', 'Precio', '24h %']
-
-
 const TablaCriptos = ({monedas, modoOscuro, busqueda, setBusqueda}) => {
 
     const [top100, setTop100] = useState(false);
@@ -172,9 +169,6 @@ const TablaCriptos = ({monedas, modoOscuro, busqueda, setBusqueda}) => {
                     <thead>
 
                         <tr>
-                            {/* {titulos.map(titulo => (
-                                <td>{titulo}</td>
-                            ))} */}
                             <td className='p-1 py-3'>
                                 <span className='p-1'>
                                 #
