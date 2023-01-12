@@ -17,22 +17,10 @@ const Cotizador = ({modoOscuro}) => {
 
   useEffect(()=>{
     const consultarAPI = async() =>{
-        const url = 'https://min-api.cryptocompare.com/data/top/mktcapfull?limit=20&tsym=USD'
-
-        //BLOQUEAR LA SIGUIENTE LINEA CON AWAIT HASTA QUE LA RESPUESTA SE RECIBA
-        
+        const url = 'https://min-api.cryptocompare.com/data/top/mktcapfull?limit=20&tsym=USD'        
         const respuesta = await fetch(url)
-
-        //
-
-        //PASANDO RESPUESTA A FORMATO JSON
-
         const resultado = await respuesta.json()
         
-        //
-
-        //CREANDO ARRAY PARA ALMACENAR LOS RESULTADOS QUE NOS INTERESAN DE LA API
-
         const arrayCriptos = resultado.Data.map(cripto => {
 
             const objeto = {
@@ -44,10 +32,6 @@ const Cotizador = ({modoOscuro}) => {
         })
 
         setCriptos(arrayCriptos);
-
-        //
-
-
     }
     consultarAPI();
   },[]);
@@ -57,14 +41,10 @@ const Cotizador = ({modoOscuro}) => {
 
       const cotizarCripto = async () => {
 
-        //MOSTRANDO SPINNER//
         setCargando(true);
-        //
         
-        // //OCULTANDO RESULTADO ANTERIOR
         setResultado({})
-        // //
-
+        
         const {monedaElegida, criptoElegida} = par
 
         const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${criptoElegida}&tsyms=${monedaElegida}` 
@@ -72,17 +52,11 @@ const Cotizador = ({modoOscuro}) => {
         const respuesta = await fetch(url)
 
         const resultado = await respuesta.json()
-        
-        //PARA ACCEDER A UNA INFORMACION ESPECIFICA DEBEMOS INYECTAR DE FORMA DINAMICA LOS VALORES DE LAS VARIABLES.
 
         setResultado(resultado.DISPLAY[criptoElegida][monedaElegida])
         // console.log(resultado.DISPLAY[criptoElegida][monedaElegida])
 
-        //OCULTANDO SPINNER
         setCargando(false);
-        //
-
-        //
       }
 
       cotizarCripto();
